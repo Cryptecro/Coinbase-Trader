@@ -104,3 +104,4 @@ class Trader(threading.Thread):
 #if __name__ == '__main__':
 
 t = Trader(api_key, api_secret)
+#based off of this https://github.com/pirate/bitcoin-trader
