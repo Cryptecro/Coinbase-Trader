@@ -1,9 +1,12 @@
- import json, hmac, hashlib, time, requests
- import money 
- from requests.auth import AuthBase #Do pip install requests
+import threading
+import json, hmac, hashlib, time, requests
+import money 
+from requests.auth import AuthBase #Do pip install requests
  
- API_KEY = 'API_KEY'
- API_SECRET = 'API_KEY'
+API_KEY = 'API_KEY'
+API_SECRET = 'API_KEY'
+market_fees = 0.15          # coinbase per-transaction fee in dollars
+min_profit_margin = 2.0     # minimum price increase before we sell out
  
  # Create custom authentication for Coinbase API
 class CoinbaseWalletAuth(AuthBase):
